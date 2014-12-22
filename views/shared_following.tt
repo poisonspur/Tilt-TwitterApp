@@ -1,0 +1,42 @@
+<div id="page">
+    <h1>Dave's Coding Test For Tilt - Query Users For Shared Following</h1>
+    <span class="message"><% error %></span>
+    <p><a href="/">To Home Page</a></P>
+    <p />
+        <form accept-charset="UTF-8" action="<% form_action %>" class="edit_news_item" method="post">
+        <div class="field">
+            <label for="news_item_body">Twitter User 1 @</label>
+            <input type="text" name="username1" value="<% username1 %>" /><br />
+            <label for="news_item_body">Twitter User 2 @</label>
+            <input type="text" name="username2" value="<% username2 %>" /><br />
+            Page: <select name="page">
+            <% FOR pagenum IN pagelist %>
+                <% IF pagenum == page %>
+                    <option value="<% pagenum %>" selected><% pagenum %></option>
+                <% ELSE %>
+                    <option value="<% pagenum %>"><% pagenum %></option>
+                <% END %>
+            <% END %>
+            </select><p />
+        </div>
+        <div class="actions">
+            <input name="commit" type="submit" value="Submit" />
+        </div>
+    </form>
+    <h2>Shared Following</h2>
+    <% IF show_following %>
+        <% IF following_count %>
+            <table>
+            <% FOREACH user IN shared_following %>
+                <tr><td rowspan=3><img src="<% user.img_url %>" /></td>
+                <td><a href="<% user.link %>"><% user.name %>&nbsp;&nbsp;@<% user.screen_name %></a></td></tr>
+                <tr><td><% user.description %></td></tr>
+                <tr><td>Followers: <% user.followers_count %>&nbsp;Following: <% user.friends_count %></td></tr>
+                <tr><td>&nbsp;</td></tr>
+            <% END %>
+            </table>
+        <% ELSE %>
+            <span class="message">There are no shared followed users to show.</span>
+        <% END %>
+    <% END %>
+</div>

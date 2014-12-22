@@ -1,0 +1,7 @@
+<div id="page">
+    <h1>Dave's Coding Test For Tilt - Index Page</h1>
+    <ul>
+        <li><a href="/user_recent_tweets">Query User For Recent Tweets</a></li>
+        <li><a href="/shared_following">Query for Intersect of Two Users' Friends</a></li>
+    </ul>
+</div>

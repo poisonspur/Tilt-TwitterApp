@@ -1,0 +1,31 @@
+<div id="page">
+    <h1>Dave's Coding Test For Tilt - Query User For Recent Tweets Page</h1>
+    <span class="message"><% error %></span>
+    <p><a href="/">To Home Page</a></P>
+    <p />
+        <form accept-charset="UTF-8" action="<% form_action %>" class="input_dorm" method="post">
+        <div class="field">
+            <label for="news_item_body">Twitter User @</label>
+            <input type="text" name="username" value="<% username %>" />
+        </div>
+        <div class="actions">
+            <input name="commit" type="submit" value="Submit" />
+        </div>
+    </form>
+    <h2>Recent Tweets</h2>
+    <% IF show_tweets %>
+        <% IF tweet_count %>
+            <table>
+            <% FOREACH tweet IN recent_tweets %>
+                <tr><td rowspan=3><img src="<% tweet.img_url %>" /></td>
+                <td><a href="<% tweet.link %>"><% tweet.text %></a></td></tr>
+                <tr><td>Retweets: <% tweet.retweet_count %>&nbsp;Favorites:<% tweet.favorite_count %></td></tr>
+                <tr><td>Tweeted at: <% tweet.created_at %></td></tr>
+                <tr><td>&nbsp;</td></tr>
+            <% END %>
+            </table>
+        <% ELSE %>
+            <span class="message">There are no recent tweets to show.</span>
+        <% END %>
+    <% END %>
+</div>

@@ -1,0 +1,22 @@
+# configuration file for production environment
+
+# only log warning and error messages
+log: "warning"
+
+# log message to a file in logs/
+logger: "file"
+
+# don't consider warnings critical
+warnings: 0
+
+# hide errors 
+show_errors: 0
+
+# cache route resolution for maximum performance
+route_cache: 1
+
+# app-specific
+tapi_consumer_key: '5AHVaGA493FIyz96SxCiS7vhC',
+tapi_consumer_secret: 'ohQxXPbHsfT2DgW8rooV2VwGZzFuocK7GjGhIiS47ZD4wAczmX',
+tapi_token: '60664044-zEh07ay9GLkYtfjgHNQz4ApyO6vfuQ3LeLoRXEfo7',
+tapi_token_secret: 'XSKhLwLVYapcVDDFZXwZdx2oAJSpB7HfiXyrBhvIbZ1PE',
