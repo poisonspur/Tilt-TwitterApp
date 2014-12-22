@@ -31,6 +31,9 @@ any [ 'get', 'post' ] => '/user_recent_tweets' => sub {
     my $recent_tweets = [];
     if ( $q->{commit} ) {
         
+        # being nice
+        $q->{username} =~ s/\s+$// if $q->{username};
+
         # check cache
         my $tc = Tilt::TwitterCache->new(config->{memcached});
         unless ($tc->{error}) { 
@@ -78,6 +81,11 @@ any [ 'get', 'post' ] => '/shared_following' => sub {
     my $total_pages = 0;
 
     if ( $q->{commit} ) {
+
+        # being nice
+        $q->{username1} =~ s/\s+$// if $q->{username1};
+        $q->{username2} =~ s/\s+$// if $q->{username2};
+
         # check cache
         my $page = $q->{page} || 1;
         my $maxrecs = config->{twitterapp}{shared_following}{results_per_page};
