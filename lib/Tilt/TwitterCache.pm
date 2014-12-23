@@ -23,7 +23,7 @@ sub new {
     $self->{mc}= Cache::Memcached->new(
         servers => \@servers,
     ); 
-    if ($@) {
+    if ($@ || !$self->{mc}) {
         $self->{error} = "MCD_CREATE_ERROR";
         $self->{logger}->error("$self->{error}|$@");
 

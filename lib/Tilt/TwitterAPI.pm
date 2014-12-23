@@ -25,7 +25,7 @@ sub new {
             access_token        => $params->{token},
             access_token_secret => $params->{token_secret},
     );
-    if (my $err = $@) {
+    if ($@ || !$self->{tw}) {
         $self->{error} = "TAPI_CREATE_ERROR";
         $self->{logger}->error("$self->{error}|$@");
     }
