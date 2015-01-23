@@ -1,5 +1,5 @@
 <div id="page">
-    <h1>Dave's Coding Test For Tilt - Query User For Recent Tweets Page</h1>
+    <h1>Dave's Coding Test - Query User For Recent Tweets Page</h1>
     <span class="message"><% error %></span>
     <p><a href="/">To Home Page</a></P>
     <p />

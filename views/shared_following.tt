@@ -1,5 +1,5 @@
 <div id="page">
-    <h1>Dave's Coding Test For Tilt - Query Users For Shared Following</h1>
+    <h1>Dave's Coding Test - Query Users For Shared Following</h1>
     <span class="message"><% error %></span>
     <p><a href="/">To Home Page</a></P>
     <p />
